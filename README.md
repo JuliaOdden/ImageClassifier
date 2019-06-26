@@ -75,7 +75,7 @@ This function (with several helper functions to break down the math) reads in th
 
 `ImageClassifier.getPercent() -> None`
 
-This is the helper function that gets the percent of the pixels in the image with above-threshold luminosity values.
+This is the helper function that gets the percent of the pixels in the image with above-threshold luminosity values. It converts the image to 'L' mode, takes in every pixel at x resolution, gets the 'L' value, counts the 'L' values that are larger than the threshold, then divides by the number of pixels it sampled.
 
 ## Outputs
 
