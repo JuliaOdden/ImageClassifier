@@ -14,8 +14,8 @@ class ImageClassifier:
         self.filename = filename
         self.basepath = basepath
         self.lthreshold = 60
-        self.pthreshold = 0.05
-        self.rthreshold = 10.0
+        self.pthreshold = 10.0
+        self.rthreshold = 130.0
         self.resolution = 10
         self.image = Image.open(self.basepath+self.filename)
         self.rms = 0.0
@@ -91,13 +91,13 @@ class ImageClassifier:
         self.getRMS()
         self.getPercent()
         self.show()
-        if(self.percent > 0.05):
+        if(self.percent > self.pthreshold):
             print(f"Image {self.filename} fails the percentage test")
-        elif(self.percent <= 0.05):
+        elif(self.percent <= self.pthreshold):
             print(f"Image {self.filename} passes the percentage test")
-        if(self.rms > 10.0):
+        if(self.rms > self.rthreshold):
             print(f"Image {self.filename} fails the RMS test")
-        elif(self.rms <= 10.0):
+        elif(self.rms <= self.rthreshold):
             print(f"Image {self.filename} passes the RMS test")
 
     def classify(self):
@@ -105,7 +105,7 @@ class ImageClassifier:
         self.getPercent()
         resultP = True
         resultR = True
-        if(self.percent > 0.05):
+        if(self.percent > self.pthreshold):
             resultP = False
         elif(self.percent <= 0.05):
             resultP = True
@@ -130,5 +130,4 @@ path = "/Users/julia/Desktop/Python/images/"
 for image in images:
     if(not image.startswith(".DS")):
         im = ImageClassifier(image, path)
-        #im.show()
         im.DetailedClassify()
