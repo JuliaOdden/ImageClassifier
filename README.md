@@ -30,7 +30,7 @@ basepath = "/Users/julia/Desktop/Python/TestImages/"
 
 for imagefilename in images:
     if(not image.startswith(".DS")):
-        im = ImageClassifier(imagefilename, path)
+        im = ImageClassifier(imagefilename, basepath)
         #im.show()
         #im.classify()
         #im.DetailedClassify()
