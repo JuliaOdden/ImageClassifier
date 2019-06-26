@@ -94,7 +94,3 @@ This is the helper function that gets the percent of the pixels in the image wit
 `Image pass1.PNG passes the percentage test`
 
 `Image pass1.PNG passes the RMS test`
-
-## Requirements for Further Improvement
-
-At the moment, thresholds are set to my own best judgment and the ten training images I was given; I would like get more labeled data, keep this project on the back burner, and continue to improve it. It very much errs on the side of caution at the moment, but I could get much more accurate and consistent results with a larger variety of labeled samples to work with.
