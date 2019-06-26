@@ -44,11 +44,11 @@ The percentage and RMS calculations are made by measuring each individual pixel 
 
 The percentage calculation works by assessing the luminosity of each pixel in the image and comparing it to a given luminosity threshold. The default is 60 (out of 255), but this function lets you change it easily.
 
-`ImageClassifier.set_PercentThreshold(int: threshold) -> None`
+`ImageClassifier.set_PercentThreshold(float: threshold) -> None`
 
 The percentage calculation is done to determine whether too much of an image is light to be safe; that line between passing and failing can be set here (the default is 10.0%).
 
-`ImageClassifier.set_RMSThreshold(int: threshold) -> None`
+`ImageClassifier.set_RMSThreshold(float: threshold) -> None`
 
 The RMS test works by calculating the R, G, and B noise in each image at a predefined resolution and comparing the RMS of all the noise in the image to a predetermined threshold. The default is 130.0, and you can custom set it with this function.
 
